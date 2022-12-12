@@ -1,0 +1,142 @@
+\documentclass[10pt,a4paper,fleqn]{article} % PREAMBLE ----------------------------------
+% Comma separated list of parameters
+% One choice of class containing presets; most of the time article will suffice
+
+% Package installation ---
+
+% Table of contents 
+\usepackage{tocloft} % table of content dots
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}} % table of content dots
+\usepackage[hidelinks]{hyperref} % clickable contents
+
+% General formatting
+\usepackage{blindtext} % generates lorem ipsum text
+\usepackage{color} % colored font
+\usepackage{xcolor}
+\usepackage[top=0.75in, left=1in, right=1in, bottom=1in]{geometry} % adjust margins precisely
+\usepackage{enumerate} % needed for roman numeral lists. Other types include itemize, description
+\usepackage{soul} % the default underline doesn't allow line breaks; use \ul{}
+\usepackage[english]{babel} % all three lines below used to fixed quotes facing wrong way " " 
+\usepackage[autostyle, english=american]{csquotes}
+\MakeOuterQuote{"}
+
+% Code
+\usepackage{listings}
+\lstdefinestyle{javac}{ % settings for style=javac
+  breaklines=true,
+  frame=single,
+  language=Java, % custom defined colors for the Java option
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color{orange!90!black},
+  commentstyle=\itshape\color{black!25},
+  stringstyle=\color{green!40!black},
+}
+
+% Math
+\usepackage{amsmath} % needed for aligning multi-line equations
+\usepackage{amssymb} % needed for R real numbers, etc.
+
+% Images
+\usepackage{float} % needed for aligning images
+\usepackage{graphicx} % needed for inserting images
+\graphicspath{{./imgs}} % path to images folder relative to this .tex file
+
+% State diagrams
+\usepackage{tikz}
+\usetikzlibrary{snakes, automata, positioning, shapes}
+
+% Attention boxes
+\usepackage{tcolorbox}
+
+\begin{document} % DOCUMENT BODY --------------------------------------------------------
+
+\title{Handbook}
+\author{Mark Gao}
+\date{2023}
+\maketitle
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+% Part - math or CS
+% Section - individual course
+% Subsection - course module
+% Subsubsection - theorem
+
+\part{Math}
+
+\section{Linear Algebra} % ==============================================================
+
+\subsection{Matrix foundations} % -------------------------------------------------------
+This section will cover:
+\begin{itemize}
+    \item Matrix operations (addition/subtraction, multiplication, transpose, inverse)
+    \item Gauss-Jordan elimination
+    \item Notable matrices (identity, diagonal)
+\end{itemize}
+
+\subsubsection{Basic Matrix Operations}
+
+\subsection{Eigenvalues and eigenvectors} % ---------------------------------------------
+
+
+\section{Calculus} % ====================================================================
+
+\subsection{Derivative and integral foundations} % --------------------------------------
+
+\subsection{Multivariable Topics} % -----------------------------------------------------
+
+
+\section{Probability} % =================================================================
+
+\subsection{Probabilitly foundations} % -------------------------------------------------
+
+\subsection{Markov Chains} % ------------------------------------------------------------
+
+\subsection{Renewal Processes} % --------------------------------------------------------
+
+\newpage
+
+\part{Computer Science}
+
+\section{Object Oriented Programming} % =================================================
+This section will mostly be covered in Java, with analogies drawn to Python. 
+This section will cover:
+\begin{itemize}
+    \item Scope and encapsulation
+    \item Polymorphism
+\end{itemize}
+
+\subsection{Java foundations} % ---------------------------------------------------------
+
+\begin{lstlisting}[language=Java,style=javac]
+    class MyClass{
+        private int x = 123;
+
+        public MyClass(int a) {
+            ...
+        }
+    }
+\end{lstlisting}
+wtf?
+hello
+
+
+\subsection{Scope \& Encapsulation} % ---------------------------------------------------
+
+
+\section{Data Structures \& Algorithms} % ===============================================
+
+\section{Machine Learning} % ============================================================
+
+\newpage
+
+\part {Finance}
+
+\section{Fixed Income} % ================================================================
+
+\end{document}
