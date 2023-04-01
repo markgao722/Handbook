@@ -71,17 +71,111 @@
 
 \section{Linear Algebra} % ==============================================================
 
-\subsection{Matrix foundations} % -------------------------------------------------------
-This section will cover:
-\begin{itemize}
-    \item Matrix operations (addition/subtraction, multiplication, transpose, inverse)
-    \item Gauss-Jordan elimination
-    \item Notable matrices (identity, diagonal)
-\end{itemize}
+\subsection{Matrix Operations} % -------------------------------------------------------
+Use the matrices $A$ and $B$ for the examples to follow.
+\begin{equation*}
+    A = \begin{pmatrix}
+        a_{11} & a_{12} \\
+        a_{21} & a_{22} \\
+    \end{pmatrix},
+    B = \begin{pmatrix}
+        b_{11} & b_{12} \\
+        b_{21} & b_{22} \\
+    \end{pmatrix}
+\end{equation*}
+The addition and subtraction of matrices happens element-wise.
+\begin{equation}
+    A + B = 
+    \begin{pmatrix}
+        a_{11} + b_{11} & a_{12} + b_{12} \\
+        a_{21} + b_{21} & a_{22} + b_{22} \\
+    \end{pmatrix}
+\end{equation}
+The multiplication operation is known as the \textbf{dot product}.
+\begin{equation}
+    A \cdot B = 
+    \begin{pmatrix}
+        a_{11} b_{11} + a_{12} b_{21} & a_{11} b_{12} + a_{12} b_{22} \\
+        a_{21} b_{11} + a_{22} b_{21} & a_{21} b_{12} + a_{22} b_{22} \\
+    \end{pmatrix}
+\end{equation}
+The division operation does not exist for matrices. There is no inverse operation to
+the dot product.
+\newline
 
-\subsubsection{Basic Matrix Operations}
+\noindent Note that \textbf{left-multiplication} and \textbf{right-multiplication} results 
+in different outcomes.
+To isolate $B$ in the equation $ABC=D$, right-multiply $C$ then left-multiply $A$:
+\begin{equation*}
+    AB = DC
+\end{equation*}
+\begin{equation*}
+    B = ADC
+\end{equation*}
+The \textbf{cross product} is a new operation to matrices. For a $2\times2$ matrix,
+the cross product is the same as its determinant.
+\begin{equation}
+    A \times B
+    =
+    \det{A} - \det{B}
+    =
+    a_{11} a_{22} - a_{12} a_{21} - \left( b_{} b_{} - b_{} b_{} \right)
+\end{equation}
+The cross product is more meaningful for matrices $3\times3$ or bigger.
+\begin{equation}
+    A \times B
+    =
+    i \begin{pmatrix}
+        
+    \end{pmatrix}
+    +
+    j \begin{pmatrix}
+        
+    \end{pmatrix}
+    +
+    k \begin{pmatrix}
+        
+    \end{pmatrix}
+\end{equation}
+The \textbf{transpose} of a matrix is flipped along its diagonal.
+Where the matrix is not square, this diagonal is imagined.
+For example given the $2\times3$ matrix $C$:
+\begin{equation}
+    \begin{pmatrix}
+        c_{11} & c_{12} & c_{13} \\
+        c_{21} & c_{22} & c_{23} \\
+    \end{pmatrix}^T
+    =
+    \begin{pmatrix}
+        c_{11} & c_{21} \\
+        c_{12} & c_{22} \\
+        c_{13} & c_{23} \\
+    \end{pmatrix}
+\end{equation}
 
-\subsection{Eigenvalues and eigenvectors} % ---------------------------------------------
+\subsection{Inverse} % ---------------------------------------------------------------
+The \textbf{inverse} of a matrix should satisfy $AA^{-1}=I$. To compute $A^{-1}$,
+
+\begin{equation}
+    A I = B
+\end{equation}
+
+\subsection{Determinant} % ---------------------------------------------------------------
+
+\subsection{Square Matrices} % ---------------------------------------------------------------
+A \textbf{diagonal matrix} is a square matrix which is comprised of non-zero values
+along the diagonal and zeros everywhere else.
+The \textbf{identity matrix} is a square matrix with $1$'s on the diagonal.
+\begin{equation}
+    I = \begin{pmatrix}
+        1 & 0 & \cdots & 0 \\
+        0 & 1 & \cdots & 0 \\
+        \vdots & \vdots & \ddots & 0 \\
+        0 & 0 & 0 & 1 \\
+    \end{pmatrix}    
+\end{equation}
+
+\subsection{Eigenvalues and Eigenvectors} % ---------------------------------------------
 
 
 \section{Calculus} % ====================================================================
