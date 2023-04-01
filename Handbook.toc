@@ -4,8 +4,9 @@
 \contentsline {subsection}{\numberline {1.1}Matrix Operations}{3}{subsection.1.1}%
 \contentsline {subsection}{\numberline {1.2}Inverse}{3}{subsection.1.2}%
 \contentsline {subsection}{\numberline {1.3}Determinant}{3}{subsection.1.3}%
-\contentsline {subsection}{\numberline {1.4}Square Matrices}{3}{subsection.1.4}%
-\contentsline {subsection}{\numberline {1.5}Eigenvalues and Eigenvectors}{4}{subsection.1.5}%
+\contentsline {subsection}{\numberline {1.4}Cross Proudct}{3}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Square Matrices}{4}{subsection.1.5}%
+\contentsline {subsection}{\numberline {1.6}Eigenvalues and Eigenvectors}{4}{subsection.1.6}%
 \contentsline {section}{\numberline {2}Calculus}{4}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Derivative and integral foundations}{4}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Multivariable Topics}{4}{subsection.2.2}%

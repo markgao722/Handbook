@@ -36,6 +36,12 @@
 % Math
 \usepackage{amsmath} % needed for aligning multi-line equations
 \usepackage{amssymb} % needed for R real numbers, etc.
+\makeatletter % fix to allow long divider bars in the matrix environment (for matrix equations)
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+  \hskip -\arraycolsep
+  \let\@ifnextchar\new@ifnextchar
+  \array{#1}}
+\makeatother
 
 % Images
 \usepackage{float} % needed for aligning images
@@ -72,18 +78,7 @@
 \section{Linear Algebra} % ==============================================================
 
 \subsection{Matrix Operations} % -------------------------------------------------------
-Use the matrices $A$ and $B$ for the examples to follow.
-\begin{equation*}
-    A = \begin{pmatrix}
-        a_{11} & a_{12} \\
-        a_{21} & a_{22} \\
-    \end{pmatrix},
-    B = \begin{pmatrix}
-        b_{11} & b_{12} \\
-        b_{21} & b_{22} \\
-    \end{pmatrix}
-\end{equation*}
-The addition and subtraction of matrices happens element-wise.
+The \textbf{addition} and subtraction of matrices happens element-wise. Take two $2\times2$ matrices $A$ and $B$:
 \begin{equation}
     A + B = 
     \begin{pmatrix}
@@ -101,17 +96,49 @@ The multiplication operation is known as the \textbf{dot product}.
 \end{equation}
 The division operation does not exist for matrices. There is no inverse operation to
 the dot product.
-\newline
-
-\noindent Note that \textbf{left-multiplication} and \textbf{right-multiplication} results 
-in different outcomes.
-To isolate $B$ in the equation $ABC=D$, right-multiply $C$ then left-multiply $A$:
+Note that matrix multiplication is \textit{not commutative}. Multiplication is carried out right to left.
 \begin{equation*}
-    AB = DC
+    ABC = A(BC)
 \end{equation*}
+The equivalent concept to "dividing away" on two sides of an equation is to right-multiply an inverse.
 \begin{equation*}
     B = ADC
 \end{equation*}
+The \textbf{transpose} of a matrix is flipped along its diagonal.
+Where the matrix is not square, this diagonal is imagined.
+For example given the $2\times3$ matrix $C$:
+\begin{equation}
+    \begin{pmatrix}
+        c_{11} & c_{12} & c_{13} \\
+        c_{21} & c_{22} & c_{23} \\
+    \end{pmatrix}^T
+    =
+    \begin{pmatrix}
+        c_{11} & c_{21} \\
+        c_{12} & c_{22} \\
+        c_{13} & c_{23} \\
+    \end{pmatrix}
+\end{equation}
+
+\subsection{Inverse} % ------------------------------------------------------------------
+The \textbf{inverse} of a matrix should satisfy $AA^{-1}=I$. The inverse is also the reciprocal of its determinant.
+\begin{equation}
+    A^{-1} = \frac{1}{|A|}
+\end{equation}
+For any $n\times n$ matrix, the inverse can also be found via Gauss-Jordan elimination.
+When the LHS is reduced to $I$, the RHS is the inverse of $A$.
+\begin{equation}
+    \begin{pmatrix}[ccc|ccc]
+        a_{11} & a_{12} & a_{13} & 1 & 0 & 0 \\
+        a_{21} & a_{22} & a_{23} & 0 & 1 & 0 \\
+        a_{31} & a_{32} & a_{33} & 0 & 0 & 1 \\
+    \end{pmatrix}
+\end{equation}
+
+\subsection{Determinant} % --------------------------------------------------------------
+
+
+\subsection{Cross Proudct} % ------------------------------------------------------------
 The \textbf{cross product} is a new operation to matrices. For a $2\times2$ matrix,
 the cross product is the same as its determinant.
 \begin{equation}
@@ -137,32 +164,8 @@ The cross product is more meaningful for matrices $3\times3$ or bigger.
         
     \end{pmatrix}
 \end{equation}
-The \textbf{transpose} of a matrix is flipped along its diagonal.
-Where the matrix is not square, this diagonal is imagined.
-For example given the $2\times3$ matrix $C$:
-\begin{equation}
-    \begin{pmatrix}
-        c_{11} & c_{12} & c_{13} \\
-        c_{21} & c_{22} & c_{23} \\
-    \end{pmatrix}^T
-    =
-    \begin{pmatrix}
-        c_{11} & c_{21} \\
-        c_{12} & c_{22} \\
-        c_{13} & c_{23} \\
-    \end{pmatrix}
-\end{equation}
 
-\subsection{Inverse} % ---------------------------------------------------------------
-The \textbf{inverse} of a matrix should satisfy $AA^{-1}=I$. To compute $A^{-1}$,
-
-\begin{equation}
-    A I = B
-\end{equation}
-
-\subsection{Determinant} % ---------------------------------------------------------------
-
-\subsection{Square Matrices} % ---------------------------------------------------------------
+\subsection{Square Matrices} % ----------------------------------------------------------
 A \textbf{diagonal matrix} is a square matrix which is comprised of non-zero values
 along the diagonal and zeros everywhere else.
 The \textbf{identity matrix} is a square matrix with $1$'s on the diagonal.
